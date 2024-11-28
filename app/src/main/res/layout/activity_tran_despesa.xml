@@ -1,0 +1,195 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Título -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/card_bottom_radius"
+            android:visibility="visible">
+
+            <!-- Botão "X" alinhado à esquerda -->
+            <TextView
+                android:id="@+id/btnFechar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="x"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp" />
+
+            <!-- Texto centralizado -->
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="Adicionar Transação"
+                android:textColor="#FFFFFF"
+                android:textSize="20sp" />
+
+            <!-- Botão "Salvar" alinhado à direita -->
+            <TextView
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="Salvar"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FFFFFF" />
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <!-- ConstraintLayout para o conteúdo abaixo -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        android:padding="16dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardView2">
+
+        <!-- RadioGroup abaixo do cardview -->
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="350dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/radio_group_background"
+            android:elevation="3dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingTop="5sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnSave"
+            tools:ignore="NotSibling">
+
+            <RadioButton
+                android:id="@+id/rbDespesa"
+                android:layout_width="106dp"
+                android:layout_height="35sp"
+                android:background="@drawable/radio_button_background"
+                android:gravity="center_vertical"
+                android:text="Despesa"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                tools:ignore="RtlCompat" />
+
+            <RadioButton
+                android:id="@+id/rbReceita"
+                android:layout_width="106dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15sp"
+                android:gravity="center_vertical"
+                android:padding="5sp"
+                android:text="Receita"
+                android:textAlignment="center"
+                tools:ignore="RtlCompat" />
+
+            <RadioButton
+                android:id="@+id/rbTransferir"
+                android:layout_width="106dp"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:padding="5sp"
+                android:text="Transferir"
+                android:textAlignment="center"
+                tools:ignore="RtlCompat" />
+        </RadioGroup>
+
+        <!-- Outros elementos abaixo do RadioGroup -->
+        <TextView
+            android:id="@+id/tvValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="16dp"
+            android:gravity="center"
+            android:padding="18dp"
+            android:text="R$ 00,00"
+            android:textColor="#3F597A"
+            android:textFontWeight="500"
+            android:textSize="24sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/radioGroup"
+            tools:ignore="MissingConstraints" />
+
+        <TextView
+            android:id="@+id/tvCategory"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="18dp"
+            android:text="Categoria: ESCOLHER>"
+            android:textColor="#000"
+            app:layout_constraintTop_toBottomOf="@id/tvValue"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/tvDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="18dp"
+            android:text="Data: 13/10/2024"
+            android:textColor="#000"
+            app:layout_constraintTop_toBottomOf="@id/tvCategory"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/tvAccount"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="18dp"
+            android:text="Conta: Principal"
+            android:textColor="#000"
+            app:layout_constraintTop_toBottomOf="@id/tvDate"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <TextView
+            android:id="@+id/tvRepeat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="18dp"
+            android:text="Repete: Não"
+            android:textColor="#000"
+            app:layout_constraintTop_toBottomOf="@id/tvAccount"
+            tools:layout_editor_absoluteX="16dp" />
+
+        <EditText
+            android:id="@+id/etObservations"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Observações"
+            android:padding="18dp"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/tvRepeat" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

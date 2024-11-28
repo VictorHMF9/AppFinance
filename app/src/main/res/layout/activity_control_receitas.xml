@@ -1,0 +1,200 @@
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Título -->
+    <Button
+        android:id="@+id/button6"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginRight="25dp"
+        android:background="@drawable/button_rounded"
+        android:text="+"
+        android:textColor="#FFFFFF"
+        android:textFontWeight="250"
+        android:textSize="22sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteY="593dp" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        app:cardCornerRadius="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/card_bottom_radius"
+            android:visibility="visible">
+
+            <!-- Botão "X" alinhado à esquerda -->
+            <TextView
+                android:id="@+id/btnFechar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_centerVertical="true"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text="<"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp" />
+
+            <!-- Texto centralizado -->
+
+            <!-- Botão "Salvar" alinhado à direita -->
+            <TextView
+                android:id="@+id/btnSave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_centerVertical="true"
+                android:paddingStart="16dp"
+                android:paddingEnd="16dp"
+                android:text=">"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:textColor="#FFFFFF"
+                android:textSize="25sp" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="300dp"
+                android:layout_height="wrap_content"
+                android:layout_centerInParent="true"
+                android:background="@drawable/rounded_background"
+                android:padding="8dp"
+                android:text="March 2022"
+                android:textAlignment="center"
+                android:textColor="#000000"
+                android:textSize="16sp" />
+
+
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="70dp"
+        android:layout_marginEnd="16dp"
+        android:background="@android:color/transparent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/cardView2"
+        app:layout_constraintVertical_bias="0.8">
+
+        <!-- RadioGroup abaixo do cardview -->
+        <RadioGroup
+            android:id="@+id/radioGroup"
+            android:layout_width="350dp"
+            android:layout_height="45dp"
+            android:layout_marginTop="16dp"
+            android:background="@drawable/radio_group_background"
+            android:elevation="3dp"
+            android:gravity="center_horizontal"
+            android:orientation="horizontal"
+            android:paddingTop="5sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/btnSave"
+            tools:ignore="NotSibling">
+
+            <RadioButton
+                android:id="@+id/rbDespesa"
+                android:layout_width="133dp"
+                android:layout_height="35sp"
+
+                android:gravity="center_vertical"
+                android:text="Despesa"
+                android:textAlignment="center"
+
+                tools:ignore="RtlCompat" />
+
+            <RadioButton
+                android:id="@+id/rbReceita"
+                android:layout_width="106dp"
+                android:layout_height="wrap_content"
+                android:layout_marginHorizontal="15sp"
+                android:background="@drawable/radio_button_background"
+                android:gravity="center_vertical"
+                android:padding="5sp"
+                android:text="Receita"
+                android:textAlignment="center"
+                android:textColor="#FFFFFF"
+                tools:ignore="RtlCompat" />
+
+        </RadioGroup>
+
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="379dp"
+            android:layout_height="81dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/dashed_border"
+            android:padding="16dp"
+            app:circularflow_defaultRadius="6sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteY="89dp">
+
+            <TextView
+                android:id="@+id/txtDespesasTitulo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_toEndOf="@id/btnAddDespesas"
+                android:text="Você não tem receitas no período. Clique para adicionar uma."
+                android:textColor="#666666"
+                android:textSize="14sp"
+                tools:ignore="UnknownId" />
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="39dp"
+                android:layout_height="41dp"
+                android:background="#FF0000"
+                app:cardBackgroundColor="#48DE0D"
+                app:cardCornerRadius="50dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/textView13"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerInParent="true"
+                        android:text="+"
+                        android:textColor="#FFFFFF"
+                        android:textSize="20sp"
+                        tools:ignore="DuplicateIds" />
+                </RelativeLayout>
+
+
+            </androidx.cardview.widget.CardView>
+
+            <!-- Botão verde -->
+
+        </RelativeLayout>
+
+        <!-- Outros elementos abaixo do RadioGroup -->
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <!-- ConstraintLayout para o conteúdo abaixo -->
+</androidx.constraintlayout.widget.ConstraintLayout>
